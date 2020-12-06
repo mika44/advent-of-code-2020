@@ -1,4 +1,4 @@
-package fr.game.advent.day05;
+package fr.game.advent.day06;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import fr.game.utils.FileUtils;
 
 public class GameOne extends AbstractGame<String, Integer> {
 	
-	private static final String INPUT_FILENAME = "day05/input-day05-1";
+	private static final String INPUT_FILENAME = "day06/input-day06-1";
 	
 	public GameOne() {
 		super(FileUtils::getListFromFile, INPUT_FILENAME, String::new);
@@ -15,11 +15,9 @@ public class GameOne extends AbstractGame<String, Integer> {
 
 	@Override
 	public Integer play(List<String> listOfInputs) {
-		return listOfInputs.stream()
-			.mapToInt(BoardingPassUtils::mapBoardingPassStringToSeatNumber)
-			.max()
-			.getAsInt();
+		return GroupAnswersUtils.mapToGroupAnswersStream(listOfInputs)
+				.mapToInt(GroupAnswers::getNumberOfQuestionsToWhichAnyoneAnsweredYes)
+				.sum();
 	}
-
 
 }

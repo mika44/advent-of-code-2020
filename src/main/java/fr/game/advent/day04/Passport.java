@@ -6,8 +6,18 @@ import java.util.Map;
 import java.util.function.Predicate;
 
 public class Passport {
+
+	public static final String ITEM_SEPARATOR = " ";
+
+	private static final String KEY_VALUE_SEPARATOR = ":";
 	
 	private Map<RequiredField, String> content;
+
+	public boolean isValidGameOne() {
+		return Arrays.stream(RequiredField.values())
+				.filter(RequiredField::isMandatory)
+				.allMatch(content.keySet()::contains);
+	}
 
 	public boolean isValid() {
 		return Arrays.stream(RequiredField.values())
@@ -23,14 +33,14 @@ public class Passport {
 	
 	private void mapContentFromString(String contentAsString) {
 		content = new HashMap<>();
-		String[] decomposition = contentAsString.split(" ");
+		String[] decomposition = contentAsString.split(ITEM_SEPARATOR);
 		for (String itemAsString : decomposition) {
 			mapItemFromString(itemAsString);
 		}
 	}
 	
 	private void mapItemFromString(String itemAsString) {
-		String[] decompositionItem = itemAsString.split(":");
+		String[] decompositionItem = itemAsString.split(KEY_VALUE_SEPARATOR);
 		RequiredField key = RequiredField.mapFromKeyCode(decompositionItem[0]);
 		content.put(key, decompositionItem[1]);
 	}
@@ -40,5 +50,4 @@ public class Passport {
 		passport.mapContentFromString(passportAsString);
 		return passport;
 	}
-
 }

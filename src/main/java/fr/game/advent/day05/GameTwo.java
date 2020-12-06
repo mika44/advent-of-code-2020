@@ -19,37 +19,33 @@ public class GameTwo extends AbstractGame<String, Integer> {
 	@Override
 	public Integer play(List<String> listOfBoardingPasses) {
 		Set<Integer> occupiedSeats = generateSetOfOccupiedSeats(listOfBoardingPasses);
-		Set<Integer> availableSeats = generateSetOfAvailableSeats(listOfBoardingPasses);
-		availableSeats.removeAll(occupiedSeats);
-		return availableSeats.iterator().next();
+		return findTheOnlyFreeSeat(occupiedSeats);
+
+/* Other solution */
+//		Set<Integer> availableSeats = generateSetOfAvailableSeats(occupiedSeats);
+//		availableSeats.removeAll(occupiedSeats);
+//		return availableSeats.iterator().next();
+	}
+
+	private Integer findTheOnlyFreeSeat(Set<Integer> occupiedSeats) {
+		Integer minSeat = occupiedSeats.stream().mapToInt(i -> i).min().getAsInt();
+		Integer maxSeat = occupiedSeats.stream().mapToInt(i -> i).max().getAsInt();
+		return Stream.iterate(0, i -> i + 1).limit(maxSeat).filter(i -> i >= minSeat) // generate all the number of seats from minSeatNumber to maxSeatNumber
+			.filter(seatNumber -> !occupiedSeats.contains(seatNumber)) // keep only number seat not occupied
+			.findFirst()
+			.get();
 	}
 
 	private Set<Integer> generateSetOfOccupiedSeats(List<String> listOfBoardingPasses) {
-		return streamOfSeatNumbers(listOfBoardingPasses).collect(Collectors.toSet());
+		return listOfBoardingPasses.stream().map(BoardingPassUtils::mapBoardingPassStringToSeatNumber).collect(Collectors.toSet());
 	}
 
-	private Stream<Integer> streamOfSeatNumbers(List<String> listOfBoardingPasses) {
-		return listOfBoardingPasses.stream().map(this::mapBoardingPassStringToSeatNumber);
-	}
 
-	private Set<Integer> generateSetOfAvailableSeats(List<String> listOfBoardingPasses) {
-		Integer minSeat = streamOfSeatNumbers(listOfBoardingPasses).mapToInt(i -> i).min().getAsInt();
-		Integer maxSeat = streamOfSeatNumbers(listOfBoardingPasses).mapToInt(i -> i).max().getAsInt();
-		Set<Integer> potentialSeats = Stream.iterate(0, i -> i + 1).limit(maxSeat).filter(i -> i >= minSeat).collect(Collectors.toSet());
-		return potentialSeats;
-	}
+//	private Set<Integer> generateSetOfAvailableSeats(Set<Integer> occupiedSeats) {
+//		Integer minSeat = occupiedSeats.stream().mapToInt(i -> i).min().getAsInt();
+//		Integer maxSeat = occupiedSeats.stream().mapToInt(i -> i).max().getAsInt();
+//		return Stream.iterate(0, i -> i + 1).limit(maxSeat).filter(i -> i >= minSeat).collect(Collectors.toSet());
+//	}
 
-	/* 
-	 * It's just map boarding pass to binary :
-	 * - F and L converted to bit 0
-	 * - B and R converted to bit 1
-	 */
-	private int mapBoardingPassStringToSeatNumber(String boardingPassString) {
-		return Stream.iterate(0, i -> i + 1).limit(boardingPassString.length())
-			.filter(i -> boardingPassString.charAt(i) == 'B' || boardingPassString.charAt(i) == 'R')
-			.mapToInt(i -> 1 << (boardingPassString.length() - i - 1))
-			.sum();
-	}
-	
 }
  

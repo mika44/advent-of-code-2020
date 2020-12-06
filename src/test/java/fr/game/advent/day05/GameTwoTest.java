@@ -14,7 +14,7 @@ public class GameTwoTest {
 	@Test
 	public void testGame() {
 		LoggerUtils.setLevel(Level.INFO);
-		Assert.assertEquals(new Integer(-1), gameTwo.play());
+		Assert.assertEquals(new Integer(642), gameTwo.play());
 	}
 
 }
