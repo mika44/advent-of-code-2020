@@ -1,4 +1,4 @@
-package fr.game.advent.day09;
+package fr.game.advent.day11;
 
 import java.util.Arrays;
 import java.util.logging.Level;
@@ -15,36 +15,25 @@ public class GameTwoTest {
 	@Test
 	public void testExemple1() {
 		LoggerUtils.setLevel(Level.INFO);
-		game.setPreambleSize(5);
-		Assert.assertEquals(new Long(62L),
+		Assert.assertEquals(new Long(26L),
 				game.play(Arrays.asList(
-						35L,
-						20L,
-						15L,
-						25L,
-						47L,
-						40L,
-						62L,
-						55L,
-						65L,
-						95L,
-						102L,
-						117L,
-						150L,
-						182L,
-						127L,
-						219L,
-						299L,
-						277L,
-						309L,
-						576L)));
+						"L.LL.LL.LL",
+						"LLLLLLL.LL",
+						"L.L.L..L..",
+						"LLLL.LL.LL",
+						"L.LL.LL.LL",
+						"L.LLLLL.LL",
+						"..L.L.....",
+						"LLLLLLLLLL",
+						"L.LLLLLL.L",
+						"L.LLLLL.LL")));
 	}
 
 
 	@Test
 	public void testGame() {
 		LoggerUtils.setLevel(Level.INFO);
-		Assert.assertEquals(new Long(76096372L), game.play());
+		Assert.assertEquals(new Long(2054), game.play());
 	}
 
 }
