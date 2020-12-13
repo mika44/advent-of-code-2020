@@ -15,7 +15,7 @@ public class GameTwoTest {
 	@Test
 	public void testAucunValide() {
 		LoggerUtils.setLevel(Level.INFO);
-		Assert.assertEquals(new Long(0),
+		Assert.assertEquals(Long.valueOf(0),
 				gameTwo.play(Arrays.asList(
 						"eyr:1972 cid:100",
 						"hcl:#18171d ecl:amb hgt:170 pid:186cm iyr:2018 byr:1926",
@@ -36,7 +36,7 @@ public class GameTwoTest {
 	@Test
 	public void testTousValides() {
 		LoggerUtils.setLevel(Level.INFO);
-		Assert.assertEquals(new Long(4),
+		Assert.assertEquals(Long.valueOf(4),
 				gameTwo.play(Arrays.asList(
 						"pid:087499704 hgt:74in ecl:grn iyr:2012 eyr:2030 byr:1980",
 						"hcl:#623a2f",
@@ -56,7 +56,7 @@ public class GameTwoTest {
 	@Test
 	public void testGame() {
 		LoggerUtils.setLevel(Level.INFO);
-		Assert.assertEquals(new Long(103), gameTwo.play());
+		Assert.assertEquals(Long.valueOf(103), gameTwo.play());
 	}
 
 }

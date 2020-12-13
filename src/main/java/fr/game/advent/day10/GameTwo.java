@@ -14,7 +14,7 @@ public class GameTwo extends AbstractGame<Integer, Long> {
 	private static final String INPUT_FILENAME = "day10/input-day10-1";
 	
 	public GameTwo() {
-		super(FileUtils::getListFromFile, INPUT_FILENAME, Integer::new);
+		super(FileUtils::getListFromFile, INPUT_FILENAME, Integer::valueOf);
 	}
 
 	private Map<Integer, Long> cache;

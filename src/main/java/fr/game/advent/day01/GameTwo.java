@@ -15,7 +15,7 @@ public class GameTwo extends AbstractGame<Integer, Long> {
 	private Logger log;
 
 	public GameTwo() {
-		super(FileUtils::getListFromFile, INPUT_FILENAME, Integer::new);
+		super(FileUtils::getListFromFile, INPUT_FILENAME, Integer::valueOf);
 		LoggerUtils.setLevel(Level.INFO);
 		log = LoggerUtils.getLogger();
 	}

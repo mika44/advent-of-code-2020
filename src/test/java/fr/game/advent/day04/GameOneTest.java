@@ -15,7 +15,7 @@ public class GameOneTest {
 	@Test
 	public void testExemple1() {
 		LoggerUtils.setLevel(Level.INFO);
-		Assert.assertEquals(new Long(2),
+		Assert.assertEquals(Long.valueOf(2),
 				gameOne.play(Arrays.asList(
 						"ecl:gry pid:860033327 eyr:2020 hcl:#fffffd",
 						"byr:1937 iyr:2017 cid:147 hgt:183cm",
@@ -35,7 +35,7 @@ public class GameOneTest {
 	@Test
 	public void testGame() {
 		LoggerUtils.setLevel(Level.INFO);
-		Assert.assertEquals(new Long(170), gameOne.play());
+		Assert.assertEquals(Long.valueOf(170), gameOne.play());
 	}
 
 }

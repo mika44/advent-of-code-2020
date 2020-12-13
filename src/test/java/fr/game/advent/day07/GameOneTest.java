@@ -15,7 +15,7 @@ public class GameOneTest {
 	@Test
 	public void testExemple1() {
 		LoggerUtils.setLevel(Level.INFO);
-		Assert.assertEquals(new Integer(4),
+		Assert.assertEquals(Integer.valueOf(4),
 				game.play(Arrays.asList(
 						"light red bags contain 1 bright white bag, 2 muted yellow bags.",
 						"dark orange bags contain 3 bright white bags, 4 muted yellow bags.",
@@ -32,7 +32,7 @@ public class GameOneTest {
 	@Test
 	public void testGame() {
 		LoggerUtils.setLevel(Level.INFO);
-		Assert.assertEquals(new Integer(265), game.play());
+		Assert.assertEquals(Integer.valueOf(265), game.play());
 	}
 
 }

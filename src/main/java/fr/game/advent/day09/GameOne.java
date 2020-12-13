@@ -13,7 +13,7 @@ public class GameOne extends AbstractGame<Long, Long> {
 	private int preambleSize;
 
 	public GameOne() {
-		super(FileUtils::getListFromFile, INPUT_FILENAME, Long::new);
+		super(FileUtils::getListFromFile, INPUT_FILENAME, Long::valueOf);
 		setPreambleSize(DEFAULT_PREAMBLE_SIZE);
 	}
 

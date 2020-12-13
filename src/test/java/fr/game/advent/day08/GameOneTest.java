@@ -15,7 +15,7 @@ public class GameOneTest {
 	@Test
 	public void testExemple1() {
 		LoggerUtils.setLevel(Level.INFO);
-		Assert.assertEquals(new Integer(5),
+		Assert.assertEquals(Integer.valueOf(5),
 				game.play(Arrays.asList(
 						"nop +0",
 						"acc +1",
@@ -32,7 +32,7 @@ public class GameOneTest {
 	@Test
 	public void testGame() {
 		LoggerUtils.setLevel(Level.INFO);
-		Assert.assertEquals(new Integer(1217), game.play());
+		Assert.assertEquals(Integer.valueOf(1217), game.play());
 	}
 
 }

@@ -16,7 +16,7 @@ public class GameOne extends AbstractGame<Integer, Integer> {
 	private static final String INPUT_FILENAME = "day10/input-day10-1";
 	
 	public GameOne() {
-		super(FileUtils::getListFromFile, INPUT_FILENAME, Integer::new);
+		super(FileUtils::getListFromFile, INPUT_FILENAME, Integer::valueOf);
 	}
 
 	@Override

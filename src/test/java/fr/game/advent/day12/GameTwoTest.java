@@ -1,4 +1,4 @@
-package fr.game.advent.day08;
+package fr.game.advent.day12;
 
 import java.util.Arrays;
 import java.util.logging.Level;
@@ -15,24 +15,20 @@ public class GameTwoTest {
 	@Test
 	public void testExemple1() {
 		LoggerUtils.setLevel(Level.INFO);
-		Assert.assertEquals(Integer.valueOf(8),
+		Assert.assertEquals(Integer.valueOf(286),
 				game.play(Arrays.asList(
-						"nop +0",
-						"acc +1",
-						"jmp +4",
-						"acc +3",
-						"jmp -3",
-						"acc -99",
-						"acc +1",
-						"jmp -4",
-						"acc +6")));
+						"F10",
+						"N3",
+						"F7",
+						"R90",
+						"F11")));
 	}
 
 
 	@Test
 	public void testGame() {
-		LoggerUtils.setLevel(Level.INFO);
-		Assert.assertEquals(Integer.valueOf(501), game.play());
+		LoggerUtils.setLevel(Level.WARNING);
+		Assert.assertEquals(Integer.valueOf(23960), game.play());
 	}
 
 }

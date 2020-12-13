@@ -15,7 +15,7 @@ public class GameTwoTest {
 	@Test
 	public void testExemple1() {
 		LoggerUtils.setLevel(Level.INFO);
-		Assert.assertEquals(new Long(26L),
+		Assert.assertEquals(Long.valueOf(26L),
 				game.play(Arrays.asList(
 						"L.LL.LL.LL",
 						"LLLLLLL.LL",
@@ -33,7 +33,7 @@ public class GameTwoTest {
 	@Test
 	public void testGame() {
 		LoggerUtils.setLevel(Level.INFO);
-		Assert.assertEquals(new Long(2054), game.play());
+		Assert.assertEquals(Long.valueOf(2054), game.play());
 	}
 
 }

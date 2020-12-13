@@ -15,7 +15,7 @@ public class GameOneTest {
 	@Test
 	public void testExemple1() {
 		LoggerUtils.setLevel(Level.INFO);
-		Assert.assertEquals(new Integer(7 * 5),
+		Assert.assertEquals(Integer.valueOf(7 * 5),
 				game.play(Arrays.asList(
 						16,
 						10,
@@ -34,7 +34,7 @@ public class GameOneTest {
 	@Test
 	public void testExemple2() {
 		LoggerUtils.setLevel(Level.INFO);
-		Assert.assertEquals(new Integer(22 * 10),
+		Assert.assertEquals(Integer.valueOf(22 * 10),
 				game.play(Arrays.asList(
 						28,
 						33,
@@ -73,7 +73,7 @@ public class GameOneTest {
 	@Test
 	public void testGame() {
 		LoggerUtils.setLevel(Level.INFO);
-		Assert.assertEquals(new Integer(2400), game.play());
+		Assert.assertEquals(Integer.valueOf(2400), game.play());
 	}
 
 }
