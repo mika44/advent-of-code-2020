@@ -17,7 +17,7 @@ public class GameTwoTest {
 		LoggerUtils.setLevel(Level.INFO);
 		Assert.assertEquals(Long.valueOf(1068781),
 				game.play(Arrays.asList(
-						"939",
+						"no use",
 						"7,13,x,x,59,x,31,19")));
 	}
 
@@ -27,7 +27,7 @@ public class GameTwoTest {
 		LoggerUtils.setLevel(Level.INFO);
 		Assert.assertEquals(Long.valueOf(3417),
 				game.play(Arrays.asList(
-						"939",
+						"no use",
 						"17,x,13,19")));
 	}
 
@@ -37,7 +37,7 @@ public class GameTwoTest {
 		LoggerUtils.setLevel(Level.INFO);
 		Assert.assertEquals(Long.valueOf(754018),
 				game.play(Arrays.asList(
-						"939",
+						"no use",
 						"67,7,59,61")));
 	}
 
@@ -47,7 +47,7 @@ public class GameTwoTest {
 		LoggerUtils.setLevel(Level.INFO);
 		Assert.assertEquals(Long.valueOf(779210),
 				game.play(Arrays.asList(
-						"939",
+						"no use",
 						"67,x,7,59,61")));
 	}
 
@@ -57,7 +57,7 @@ public class GameTwoTest {
 		LoggerUtils.setLevel(Level.INFO);
 		Assert.assertEquals(Long.valueOf(1261476),
 				game.play(Arrays.asList(
-						"939",
+						"no use",
 						"67,7,x,59,61")));
 	}
 
@@ -67,7 +67,7 @@ public class GameTwoTest {
 		LoggerUtils.setLevel(Level.INFO);
 		Assert.assertEquals(Long.valueOf(1202161486),
 				game.play(Arrays.asList(
-						"939",
+						"no use",
 						"1789,37,47,1889")));
 	}
 
