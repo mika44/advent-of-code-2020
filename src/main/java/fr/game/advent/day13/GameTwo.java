@@ -65,11 +65,11 @@ public class GameTwo extends AbstractGame<String, Long> {
 	 * 
 	 * Considering 2 pairs (i, a) and (j, b).
 	 * Suppose you can solve the problem of earlyTimeStamp for these 2 pairs and that the solution is the value 'ets'.
-	 * Then it means that the value 'ets' is the minimal good value such as (a - i) modulo ets = 0 and (b - j) modulo ets = O.
+	 * Then it means that the value 'ets' is the minimal good value such as (ets - i) modulo a = 0 and (ets - j) modulo b = O.
 	 * 
 	 * But there are infinite other good values : 
 	 * let's call 'lcm' the Least Common Multiple of a and b
-	 * then ets(k) = ets + k x lcm with k > 0 is also a value which verifies (a - i) modulo ets(k) = 0 and (b - j) modulo ets(k) = O.
+	 * then ets(k) = ets + k x lcm with k > 0 is also a value which verifies (ets(k) - i) modulo a = 0 and (ets(k) - j) modulo b = O.
 	 * 
 	 * All this means that if we can find a pair (p, x) that also produces solutions ets(k) for k >= 0, 
 	 * then (p, x) is equivalent to the 2 pairs (i, a) and (j, b) in the problem of earlyTimeStamp.
